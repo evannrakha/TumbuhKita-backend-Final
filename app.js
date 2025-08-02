@@ -29,7 +29,8 @@ app.get('/', (req, res) => {
 
 // Sync database and start server
 const PORT = process.env.PORT || 3000;
-db.sequelize.sync({force: true}).then(async() => {
+db.sequelize.sync().then(async() => {
+    /*
      // ====== DATA DUMMY ======
     const bcrypt = require('bcryptjs');
     const { User, OrangTua, TenagaKesehatan, Posyandu, Kategori, Artikel, Balita, BalitaJadwalVaksinasi, JadwalVaksin } = db;
@@ -165,7 +166,7 @@ db.sequelize.sync({force: true}).then(async() => {
         status: 'pending'
     });
 
-    // ====== END DATA DUMMY ======
+    // ====== END DATA DUMMY ====== */
 
     app.listen(PORT, () => {
         console.log(`Server running on http://localhost:${PORT}`);
